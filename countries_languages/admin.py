@@ -8,6 +8,7 @@ class PersonAdmin(admin.ModelAdmin):
     """Персонал"""
     list_display = '__str__', 'birthday', 'organization', 'country', 'language', 'preview', 'created', 'updated'
     readonly_fields = 'preview',
+    list_editable = 'country', 'language',
 
     def preview(self, obj):
         if obj.photo:
