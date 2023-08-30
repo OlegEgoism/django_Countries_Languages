@@ -7,7 +7,7 @@ from .models import Person, Organization
 class PersonAdmin(admin.ModelAdmin):
     """Персонал"""
     list_display = '__str__', 'birthday', 'organization', 'country', 'language', 'preview', 'created', 'updated', 'curator'
-    readonly_fields = 'preview', 'created', 'updated', 'curator',
+    readonly_fields = 'preview', #'created', 'updated', 'curator',
     list_editable = 'country', 'language',
 
     def preview(self, obj):

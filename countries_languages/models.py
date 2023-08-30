@@ -19,7 +19,7 @@ class Person(models.Model):
     organization = models.ForeignKey('Organization', verbose_name='Организация', on_delete=models.RESTRICT)
     created = models.DateTimeField(verbose_name='Дата создания', auto_now_add=True)
     updated = models.DateTimeField(verbose_name='Дата изменения', auto_now=True)
-    curator = models.ForeignKey(User, verbose_name='Создал запись', on_delete=models.CASCADE, null=True, blank=True)
+    curator = models.ForeignKey(User, verbose_name='Создал запись', on_delete=models.SET_NULL, null=True, blank=True)
 
     class Meta:
         verbose_name = 'Персонал'
